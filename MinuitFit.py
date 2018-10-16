@@ -44,7 +44,7 @@ def Setup(main_x,main_y,main_xerr,main_yerr,main_func,main_ax):
 	return 0
 
 	
-def chisquare(*par,Dopt=True)
+def chisquare(*par,Dopt=True):
 	output=[]
 	graph_par=[] 
 	res_text=''
