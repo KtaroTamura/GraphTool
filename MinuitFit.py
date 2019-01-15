@@ -136,7 +136,7 @@ def SetLimit(*ppap,lim_a=False,lim_b=False,lim_c=False,lim_d=False):
 		if lim_par[kk]!=False:
 			opt_order=opt_order+",{}={}".format(limitter[kk],lim_par[kk])
 	return 0
-
+	
 def SetRange(x_min,x_max):
 	global data_x
 	global data_y
@@ -145,24 +145,19 @@ def SetRange(x_min,x_max):
 	global xmin
 	global xmax
 	global x_div
-	n=data_x.shape[0]
-	X_new=np.empty((0,1))
-	Y_new=np.empty((0,1))
-	X_err_new=np.empty((0,1))
-	Y_err_new=np.empty((0,1))
-	for ii in range(0,n):
-		if data_x[ii]>=x_min and data_x[ii]<=x_max:
-			print("{}".format(data_x[ii]))
-			X_new=np.append(X_new,data_x[ii])
-			Y_new=np.append(Y_new,data_y[ii])
-			X_err_new=np.append(X_err_new,x_err[ii])
-			Y_err_new=np.append(Y_err_new,y_err[ii])
-	data_x=X_new
-	data_y=Y_new
-	x_err=X_err_new
-	y_err=Y_err_new
+	min_num=data_x[data_x<x_min].shape[0]
+	max_num=-1*data_x[data_x>x_max].shape[0]
+	if max_num!=0:
+		data_x=data_x[min_num:max_num]
+		data_y=data_y[min_num:max_num]
+		x_err=x_err[min_num:max_num]
+		y_err=y_err[min_num:max_num]
+	elif max_num==0:
+		data_x=data_x[min_num:]
+		data_y=data_y[min_num:]
+		x_err=x_err[min_num:]
+		y_err=y_err[min_num:]
 	xmin=x_min
 	xmax=x_max
 	x_div=(xmax-xmin)/100
-	return X_new,Y_new,X_err_new,Y_err_new
-	
+	return data_x,data_y,x_err,y_err 
