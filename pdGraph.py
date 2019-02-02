@@ -9,6 +9,9 @@ if __name__=="__main__":
 	filename=args[1]
 	data=[]
 	data=pd.read_csv(filename,delimiter=',',dtype=None,skiprows=0)
+
+##Make Graph Data
+#	data.columns['','','']
 	x=data["1"]
 	y=data["2"]
 	n=data.shape[0]
