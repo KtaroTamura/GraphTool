@@ -8,10 +8,15 @@ if __name__=="__main__":
 	filename=args[1]
 	data=[]
 	data=np.loadtxt(filename,delimiter=',',dtype=None,skiprows=0)
+
+##Make Graoph Data
 	x=data[:,0].flatten()
 	y=data[:,4].flatten()
 	n=data.shape[0]
 	g1=ROOT.TGraph(n,x,y)
+
+
+##Graph Details
 	g1.SetMarkerColor(2)
 	g1.SetLineColor(2)
 	g1.SetTitle("")
