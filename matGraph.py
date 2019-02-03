@@ -10,7 +10,7 @@ if __name__=="__main__":
 	data=pd.read_csv(filename,delimiter=',',dtype=None,skiprows=0)
 
 ##Make graph data
-	data.colums["","",""]
+	data.columns=["","",""]
 	x=data["1"]
 	y=data["2"]
 	plt.plot(x,y,label='',color='b')
