@@ -104,6 +104,8 @@ def Draw_graph(*para,k=0):
 	global graph_counter
 	gx=np.arange(xmin,xmax,x_div)
 	fit_line=fitfunc(gx,*para)
+	if type(fit_line) is float:
+		fit_line=np.full(gx.shape[0],fit_line)
 	ax.plot(gx,fit_line,color='r')
 	if graph_counter==0:
 		textstr=r'$\chi^2=%.2f$' % (k, )
