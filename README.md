@@ -1,8 +1,9 @@
 # GraphTool
 # Overview
 * MinFit.py \
-iMinuitによる誤差付き最小二乗法フィッティング用パッケージ \
-実行のソースコードはMinmain.py 
+iMinuitによる誤差付き最小二乗法フィッティング用コード \
+実行のソースコードはMinmain.py \
+
 
 * pdGraph.py \
 pandasとROOTによるグラフ表示。CERNのpyROOT環境が必要。
