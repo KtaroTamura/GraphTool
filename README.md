@@ -1,7 +1,7 @@
 # GraphTool
 # Overview
 * MinFit.py \
-iMinuitによる誤差付き最小二乗法フィッティング用パッケージ \
+iMinuitによる誤差付き最小二乗法フィッティング用コード \
 実行のソースコードはMinmain.py 
 
 * pdGraph.py \
