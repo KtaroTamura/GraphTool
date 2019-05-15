@@ -10,6 +10,11 @@ int graph(){
 		i++;
 	}
 
+///Graph Setting///
+//  g1->SetTitle("Title");
+//	g1->GetXaxis()->SetTitle("XX");
+//	g1->GetYaxis()->SetTitle("YY");
+
 	g1->Draw();
 	fclose(fp);
 	return 0;
